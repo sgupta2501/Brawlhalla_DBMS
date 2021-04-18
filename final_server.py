@@ -8,10 +8,10 @@ import mysql.connector
 import sys
 import json
 mydb = mysql.connector.connect(
-host="localhost",
-user="root",
-password="hello0hello",
-database="brawlhalla"
+  host="localhost",
+  user="tester",
+  password="test@123",
+  database="brawlhalla"
 )
 cur=mydb.cursor()
 def insert_steamid(s):
