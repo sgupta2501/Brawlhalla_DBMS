@@ -25,7 +25,8 @@ def checkTableExists(dbcon, tablename):
 
 mycursor = mydb.cursor()
 if checkTableExists(mydb,"players_1v1") == True:
-	mycursor.execute("drop table players_1v1 ")
+    print("table there")
+    mycursor.execute("drop table players_1v1")
 mycursor.execute("create table players_1v1 (rankp int primary key,name varchar(100),brawlhalla_id int,region varchar(20),best_legend int,best_legend_games int,best_legend_wins int,rating int, tier varchar(20), games int, wins int,peak_rating int)")
 
 if checkTableExists(mydb,"players_2v2") == True:

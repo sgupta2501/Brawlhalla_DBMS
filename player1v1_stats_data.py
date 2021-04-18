@@ -1,15 +1,13 @@
 import requests
 import json
-import yaml
 import mysql.connector
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  password="hello0hello",
+  user="tester",
+  password="test@123",
   database="brawlhalla"
 )
-
 def checkTableExists(dbcon, tablename):
     dbcur = dbcon.cursor()
     dbcur.execute("""
