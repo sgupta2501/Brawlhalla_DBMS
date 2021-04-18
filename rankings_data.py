@@ -1,6 +1,5 @@
 import requests
 import json
-import yaml
 import mysql.connector
 
 mydb = mysql.connector.connect(
