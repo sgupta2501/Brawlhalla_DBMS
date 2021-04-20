@@ -1,0 +1,18 @@
+
+#table_container{
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+#table{
+  margin: 0 auto; /* or margin: 0 auto 0 auto */
+
+}
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 70%;
+    border-collapse: collapse;
+  }

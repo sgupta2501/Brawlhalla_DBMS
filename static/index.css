@@ -1,0 +1,174 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+
+	margin: 0;
+	
+
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+	font-size: .95em;
+	margin: 0 0 1em 0;
+}
+h2,
+h3,
+a {
+	color: #093a58;
+}
+h2,
+h3 {
+	margin: 0 0 .8em 0;
+}
+a {
+	text-decoration: none;
+}
+
+
+
+.name {
+	font-size: 1.35em;
+	margin: 0;
+}
+.main-nav {
+	margin-top: 5px;
+	font-family: quicksandNav;
+
+}
+.nav-cont{
+	top:0;
+  position: sticky; /* Safari */
+	margin: 0;
+	box-shadow: 0px 5px 10px grey;
+
+	background-color: white;
+}
+.name a,
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+.main-nav a {
+	font-size: .95em;
+	color: black;
+	text-transform: uppercase;
+}
+.main-nav a:hover {
+	color: #3acec2;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+	padding: 0;
+	background-color: white;
+	
+}
+.banner,
+.main-footer {
+	text-align: center;
+}
+.headCon{
+	font-family: quicksandNav;
+	color: white;
+	text-align: center;
+	font-size:3.2em;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+.headCon a{
+	text-decoration: none;
+	color: #77e4ff;
+	font-size: 0.7em;
+}
+/*.banner {
+	color: #fff;
+	background: #3acec2;
+	
+	margin-bottom: 48px;
+}*/
+.col {
+	padding: 1em;
+	background: white;
+	border-radius: .35em;
+	margin: 0 .5em .8em;
+
+   font-family: quicksandNav;
+   text-align: center;
+}
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+.col img{
+	  border-radius: 50%;
+width: 200px;
+height: 200px;
+}
+
+
+.headline {
+	margin-bottom: 0;
+}
+.feat-img {
+	border-radius: 5px;
+}
+#prev,#next {
+	color: #fff;
+	text-align: center;
+	padding: .625em 1.25em;
+	background: #0b192e;
+	border-radius: .35em;
+}
+/* .headCon p{
+		color: #77e4ff;
+	font-size: 0.7em;
+}
+.gameName{
+	padding-bottom: 2px;
+	margin-top: auto;
+} */
+/* .name{
+font-family: quicksand;	
+} */
+/* .banner{padding: 3.2em 0;
+text-align: center;
+color: white;
+font-family: quicksand;
+background-image: url("mainback2.png") ; 
+   font-size: 2.2em;
+min-height: 100vh;
+} */
+.headline{
+	padding-top: 100px;
+}
+/* */
+
+@media (min-width: 769px) {
+	.main-header,
+	.row {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.tagline {
+		font-size: 1.4em;
+
+	}
+}
+@media (min-width: 1025px) {
+	.main-header,
+	.row {
+		width: 80%;
+		max-width: 1150px;
+	}
+}
