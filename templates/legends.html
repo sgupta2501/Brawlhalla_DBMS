@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+  {% block content %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='indexFlex.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='formTable.css') }}" />
+
+  <div align="center" class="uspass" >
+  
+        <h4>Search using legend name</h4>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.name.label }}<br>
+                {{ form.name(size=32) }}<br>
+                {% for error in form.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            
+            <p>{{ form.submit() }}</p>
+
+			<p>{{ message }}</p>
+        </form>
+    </div>
+    <table id="table">
+        <thead> 
+        <tr> 
+            <th>id</th> 
+            <th>name</th> 
+            <th>weapon one</th>
+            <th>weapon two</th>
+            <th>strength</th> 
+            <th>dexterity</th>
+            <th>defense</th>
+            <th>speed</th>
+            
+        </tr> 
+        </thead> 
+        <tbody id="table-body">
+    
+        </tbody>
+    </table>
+    <hr>
+   
+     
+    <script>
+        const data={{ answer|tojson }};
+        const tableBody = document.getElementById("table-body");
+        
+        function renderTable() {
+      
+            while(tableBody.firstChild){
+                tableBody.removeChild(tableBody.firstChild)
+            }
+            
+            
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                <td>${data[0][0]}</td>
+                <td>${data[0][1]}</td>
+                <td>${data[0][4]}</td>
+                <td>${data[0][5]}</td>
+                <td>${data[0][6]}</td>
+                <td>${data[0][7]}</td>
+                <td>${data[0][8]}</td>
+                <td>${data[0][9]}</td>
+                `
+                tableBody.appendChild(tr);
+           
+           
+           
+        }
+        
+        renderTable();
+
+      </script>
+{% endblock %}

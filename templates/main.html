@@ -1,0 +1,71 @@
+<html>
+<body>
+	<a href="localhost/ent:5000">ahah</a>
+	<label for="myCheck">legends</label>
+	<input type="checkbox" id="myCheck" onclick="myFunction()">
+	<div id="current-page"></div>
+<div id="total-pages"></div>
+<button id="prev">prev</button>
+<button id="next">next</button>
+<table id="table">
+    <thead> 
+    <tr> 
+        <th>RANK</th> 
+        <th>Name</th> 
+        <th>REGION</th>
+        <th>BEST LEGEND</th>
+    </tr> 
+    </thead> 
+    <tbody id="table-body">
+
+    </tbody>
+</table>
+
+</div>
+    <script type="text/javascript">
+        const data={{ test|tojson }};
+        const maxRecords = 10;
+
+        const currentPageRef = document.getElementById("current-page")
+        const totalPagesRef = document.getElementById("total-pages")
+
+        let currentPage = 0;
+        const totalPages = Math.ceil(data.length / maxRecords);
+
+        currentPageRef.innerHTML = currentPage;
+        totalPagesRef.innerHTML = totalPages;
+
+        const nextRef = document.getElementById("next")
+        const prevRef = document.getElementById("prev")
+
+        function updateCurrentPage(value) {
+            return () => {
+                currentPage = (currentPage + value) % totalPages;
+                currentPageRef.innerHTML = currentPage;
+                renderTable();
+            }
+        }
+
+        nextRef.addEventListener("click", updateCurrentPage(1))
+        prevRef.addEventListener("click", updateCurrentPage(-1))
+
+        const tableBody = document.getElementById("table-body");
+
+        function renderTable() {
+            while(tableBody.firstChild){
+                tableBody.removeChild(tableBody.firstChild)
+            }
+            data.slice(currentPage*maxRecords, (currentPage+1)*maxRecords).forEach(record => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                <td>${record[0]}</td>
+                <td>${record[1]}</td>
+                <td>${record[2]}</td>
+                <td>${record[3]}</td>
+                `
+                tableBody.appendChild(tr);
+            })
+        }
+
+    </script>
+</body> </html>
