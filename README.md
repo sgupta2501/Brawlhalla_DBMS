@@ -1,4 +1,4 @@
-# dbms_proj
+# Brawlhalla Leaderboard
 Order of execution
 1. trigger_add.py (create trigger: creates a log of brawlhalla id of players in the system)
 2. rankings_data.py (rankings of 1v1, 2v2 players)
